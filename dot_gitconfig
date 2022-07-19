@@ -1,0 +1,7 @@
+[user]
+	email = "{{ .email }}"
+	name = Benjamin Dornel
+[core]
+	pager = "less -F" # Only use pager when output is more than one screen
+	excludesfile = ~/.gitignore_global
+	editor = code --wait
