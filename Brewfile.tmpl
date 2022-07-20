@@ -7,6 +7,8 @@ brew "gcc"
 brew "python@3.8"
 # Python version management
 brew "pyenv"
+# Python package management tool
+brew "poetry"
 # Distributed revision control system
 brew "git"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -19,6 +21,10 @@ brew "awscli"
 brew "fzf"
 # Modern replacement for 'ls'
 brew "exa"
+# Tool to build, change, and version infrastructure
+brew "terraform"
+
+# MacOS specific tools
 {{- if (eq .chezmoi.os "darwin") }}
 # Tool for managing dock items
 brew "dockutil"
