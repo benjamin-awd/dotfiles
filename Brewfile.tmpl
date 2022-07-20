@@ -25,7 +25,7 @@ brew "exa"
 brew "terraform"
 
 # MacOS specific tools
-{{- if (eq .chezmoi.os "darwin") }}
+{{- if eq .chezmoi.os "darwin" }}
 # Tool for managing dock items
 brew "dockutil"
 {{- end }}
