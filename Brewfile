@@ -17,6 +17,8 @@ brew "awscli"
 brew "fzf"
 # Modern replacement for 'ls'
 brew "exa"
+# Tool for managing dock items
+brew "dockutil"
 
 # Web browser
 cask "google-chrome"
