@@ -3,6 +3,9 @@
 
 # https://github.com/roconnorr/dotfiles/blob/master/init.sh
 
+# Update all packages
+sudo apt update
+
 # Install Homebrew
 if ! which -s brew;
 then
@@ -15,12 +18,12 @@ fi
 echo "init chezmoi"
 brew install chezmoi
 chezmoi init https://github.com/benjamin-awd/dotfiles.git
-chezmoi apply
+chezmoi apply --verbose
 
-# install homebrew packages
+# Install homebrew packages
 brew bundle install
 
-# install oh-my-zsh
+# Install oh-my-zsh
 OMZDIR=~/.oh-my-zsh
 if [ -d "$OMZDIR" ]; then
     echo "oh-my-zsh is already installed"
@@ -32,7 +35,7 @@ else
     chezmoi apply
 fi
 
-# fix shell completion permissions
+# Fix shell completion permissions
 compaudit | xargs chmod g-w,o-w
 
 source ~/.zshrc
