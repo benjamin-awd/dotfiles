@@ -7,7 +7,7 @@
 sudo apt update
 
 # Install Homebrew
-if ! which -s brew;
+if ! which brew;
 then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
