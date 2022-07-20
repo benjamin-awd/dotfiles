@@ -27,14 +27,12 @@ else
 fi
 
 echo "init chezmoi"
-brew install chezmoi
-chezmoi init https://github.com/benjamin-awd/dotfiles.git
+brew bundle --file=- <<EOF
+    brew 'chezmoi'
+EOF
 
 # Install homebrew packages
 brew bundle install --verbose
-
-# Run chezmoi
-chezmoi apply --verbose
 
 # Install oh-my-zsh
 OMZDIR=~/.oh-my-zsh
