@@ -18,6 +18,10 @@ then
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
 
+    # Install brew dependencies
+    sudo apt-get install build-essential
+    brew install gcc
+
 else
     echo "Homebrew is already installed."
 fi
