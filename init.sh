@@ -11,16 +11,16 @@ if ! which -s brew;
 then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+    # Install brew dependencies
+    sudo apt-get install build-essential
+
     if [ "$(uname)" == "Linux" ]; 
     then
         echo "Adding Linux Homebrew to path"
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
-
-    # Install brew dependencies
-    sudo apt-get install build-essential
-    brew install gcc
 
 else
     echo "Homebrew is already installed."
