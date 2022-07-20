@@ -35,7 +35,4 @@ else
     chezmoi apply
 fi
 
-# Fix shell completion permissions
-compaudit | xargs chmod g-w,o-w
-
 source ~/.zshrc
