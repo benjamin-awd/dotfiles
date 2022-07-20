@@ -35,4 +35,5 @@ else
     chezmoi apply
 fi
 
+zsh
 source ~/.zshrc
