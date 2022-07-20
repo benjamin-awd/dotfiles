@@ -28,7 +28,7 @@ chezmoi init https://github.com/benjamin-awd/dotfiles.git
 chezmoi apply --verbose
 
 # Install homebrew packages
-brew bundle install
+brew bundle install --verbose
 
 # Install oh-my-zsh
 OMZDIR=~/.oh-my-zsh
