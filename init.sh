@@ -1,6 +1,8 @@
 #!/bin/bash
 # script to set up a new macos machine
 
+# https://github.com/roconnorr/dotfiles/blob/master/init.sh
+
 # Install Homebrew
 if ! which -s brew;
 then
