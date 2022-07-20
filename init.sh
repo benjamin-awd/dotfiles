@@ -25,10 +25,12 @@ fi
 echo "init chezmoi"
 brew install chezmoi
 chezmoi init https://github.com/benjamin-awd/dotfiles.git
-chezmoi apply --verbose
 
 # Install homebrew packages
 brew bundle install --verbose
+
+# Run chezmoi
+chezmoi apply --verbose
 
 # Install oh-my-zsh
 OMZDIR=~/.oh-my-zsh
@@ -39,7 +41,7 @@ else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     # remove template file
     rm .zshrc.pre-oh-my-zsh
-    chezmoi apply
+    chezmoi apply --verbose
 fi
 
 zsh
