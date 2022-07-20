@@ -30,9 +30,10 @@ echo "init chezmoi"
 brew bundle --file=- <<EOF
     brew 'chezmoi'
 EOF
+chezmoi init --apply --verbose https://github.com/benjamin-awd/dotfiles.git
 
 # Install homebrew packages
-brew bundle install --verbose
+# brew bundle install --verbose
 
 # Install oh-my-zsh
 OMZDIR=~/.oh-my-zsh
