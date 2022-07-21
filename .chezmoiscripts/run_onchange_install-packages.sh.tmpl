@@ -26,7 +26,7 @@
     "visual-studio-code"
 -}}
 
-{{- if (eq .chezmoi.os "darwin") -}}
+{{ if (eq .chezmoi.os "darwin") -}}
 {{ $brews = concat $brews (list
     "dockutil") -}}
 {{ end -}}
@@ -38,7 +38,7 @@ set -eufo pipefail
 brew tap {{ . }}
 {{ end  }}
 
-{{- if (eq .chezmoi.os "darwin") -}}
+{{ if (eq .chezmoi.os "darwin") -}}
 brew install --cask {{ $casks | join " " }}
 {{ end -}}
 brew install {{ $brews | join " " }}
