@@ -29,8 +29,6 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 {{ $brews = concat $brews (list
     "dockutil") -}}
-{{ $brews = concat $brews (list
-"dockutil") -}}
 {{ end -}}
 
 #!/bin/bash
@@ -40,5 +38,7 @@ set -eufo pipefail
 brew tap {{ . }}
 {{ end  }}
 
+{{- if (eq .chezmoi.os "darwin") -}}
 brew install --cask {{ $casks | join " " }}
+{{ end -}}
 brew install {{ $brews | join " " }}
