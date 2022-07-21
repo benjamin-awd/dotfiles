@@ -12,11 +12,18 @@ then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+    # Add Brew to path
     if [ "$(uname)" == "Linux" ]; 
     then
         echo "Adding Linux Homebrew to path"
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    fi
+    if [ "$(uname)" == "Darwin" ]; 
+    then
+        echo "Adding Homebrew to path"
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
 else
