@@ -1,0 +1,39 @@
+{{ $brews := list
+    "awscli"
+    "bat"
+    "exa"
+    "fzf"
+    "gcc"
+    "git"
+    "poetry"
+    "postgresql"
+    "pyenv"
+    "python@3.8"
+    "terraform" 
+-}}
+
+{{ $casks := list
+    "bitwarden"
+    "google-chrome"
+    "rectangle"
+    "slack"
+    "spotify"
+    "telegram"
+    "visual-studio-code"
+-}}
+
+{{- if (eq .chezmoi.os "darwin") -}}
+{{ $brews = concat $brews (list
+    "dockutil") -}}
+{{ end -}}
+
+#!/bin/bash
+set -eufo pipefail
+
+{{ range $taps }}
+brew tap {{ . }}
+{{ end  }}
+brew install --cask {{ $casks | join " " }}
+brew install {{ $brews | join " " }}
+
+{{ end -}}
