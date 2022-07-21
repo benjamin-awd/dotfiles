@@ -1,9 +1,3 @@
-{{ $taps := list
-    "homebrew/bundle"
-    "homebrew/cask"
--}}
-
-
 {{ $brews := list
     "awscli"
     "bat"
@@ -31,15 +25,12 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 {{ $brews = concat $brews (list
     "dockutil") -}}
+{{ $brews = concat $brews (list
+"dockutil") -}}
 {{ end -}}
 
 #!/bin/bash
 set -eufo pipefail
 
-{{ range $taps }}
-brew tap {{ . }}
-{{ end  }}
 brew install --cask {{ $casks | join " " }}
 brew install {{ $brews | join " " }}
-
-{{ end -}}
