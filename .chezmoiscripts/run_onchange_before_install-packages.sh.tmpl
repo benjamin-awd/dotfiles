@@ -9,24 +9,27 @@
     "fzf"
     "gcc"
     "git"
+    "jupyterlab"
     "poetry"
     "postgresql"
     "pyenv"
     "python@3.8"
-    "terraform" 
+    "terraform"
+    "tree"
 -}}
 
 {{ $casks := list
     "bitwarden"
     "google-chrome"
     "rectangle"
+    "scroll-reverser"
     "slack"
     "spotify"
     "telegram"
     "visual-studio-code"
 -}}
 
-{{- if (eq .chezmoi.os "darwin") -}}
+{{ if (eq .chezmoi.os "darwin") -}}
 {{ $brews = concat $brews (list
     "dockutil") -}}
 {{ end -}}
@@ -38,7 +41,8 @@ set -eufo pipefail
 brew tap {{ . }}
 {{ end  }}
 
-{{- if (eq .chezmoi.os "darwin") -}}
+brew install {{ $brews | join " " }}
+
+{{ if (eq .chezmoi.os "darwin") -}}
 brew install --cask {{ $casks | join " " }}
 {{ end -}}
-brew install {{ $brews | join " " }}
