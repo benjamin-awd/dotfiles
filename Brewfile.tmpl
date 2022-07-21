@@ -25,9 +25,10 @@ brew "exa"
 brew "terraform"
 
 # MacOS specific tools
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .location "work" }}
 # Tool for managing dock items
 brew "dockutil"
+{{- end }}
 
 # Web browser
 cask "google-chrome"
@@ -43,4 +44,3 @@ cask "telegram"
 cask "slack"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-{{ end }}
