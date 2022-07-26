@@ -54,3 +54,4 @@ fi
 
 zsh
 source ~/.zshrc
+exec zsh
