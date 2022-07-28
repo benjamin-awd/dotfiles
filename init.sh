@@ -16,13 +16,11 @@ then
     if [ "$(uname)" == "Linux" ]; 
     then
         echo "Adding Linux Homebrew to path"
-        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
     if [ "$(uname)" == "Darwin" ]; 
     then
         echo "Adding Homebrew to path"
-        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
         eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
