@@ -1,6 +1,6 @@
 [user]
-	email = {{ email }}
-	user = {{ user }}
+	email = {{ .email }}
+	user = {{ .user }}
 	name = Benjamin Dornel
 	signingKey = 92FBEB438E396E2C440139FA8719C518A789A907
 [core]
