@@ -15,7 +15,8 @@ then
     # Add Brew to path
     if [ "$(uname)" == "Linux" ]; 
     then
-        echo "Adding Linux Homebrew to path"
+        echo "Adding Linux Homebrew to path"+
+        echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.profile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
     if [ "$(uname)" == "Darwin" ]; 
