@@ -44,7 +44,7 @@ if [ -d "$OMZDIR" ]; then
     echo "oh-my-zsh is already installed"
 else 
     echo "oh-my-zsh not installed - installing"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    sudo apt-get -y install zsh
     # remove template file
     rm .zshrc.pre-oh-my-zsh
     chezmoi apply --verbose
