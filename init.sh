@@ -53,3 +53,11 @@ fi
 zsh
 source ~/.zshrc
 exec zsh
+
+# Install gpg
+GPGDIR=~/.gnupg
+if [ -d "GPGDIR" ]; then
+    echo "Gnupg is already installed"
+else
+    mkdir ~/.gnupg
+fi
