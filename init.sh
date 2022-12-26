@@ -46,8 +46,12 @@ if [ -d "$OMZDIR" ]; then
 else 
     echo "oh-my-zsh not installed - installing"
     sudo apt-get -y install zsh
+
     # remove template file
     rm .zshrc.pre-oh-my-zsh
+
+    # set zsh as default file
+    chsh -s $(which zsh)
     chezmoi apply --verbose
 fi
 

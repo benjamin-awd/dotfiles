@@ -2,13 +2,12 @@
 	email = {{ .email }}
 	user = {{ .user }}
 	name = Benjamin Dornel
-	signingKey = 92FBEB438E396E2C440139FA8719C518A789A907
 [core]
 	pager = "less -F -X" # Only use pager when output is more than one screen
 	excludesfile = ~/.gitignore_global
 	editor = code --wait
 [commit]
-	gpgSign = true
+	gpgSign = false
 
 [includeIf "gitdir:~/.local/share/chezmoi/"]
 	path = ~/.local/share/.gitconfig
