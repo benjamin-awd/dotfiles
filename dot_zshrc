@@ -1,10 +1,8 @@
 # Pyenv
-if [ "$(uname)" == "Linux" ]; 
-then
+if [ -d "/home/linuxbrew" ]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
-if [ "$(uname)" == "Darwin" ]; 
-then
+if [ -d "/opt/homebrew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 export PYENV_ROOT="$HOME/.pyenv"
