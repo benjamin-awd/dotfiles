@@ -132,4 +132,3 @@ alias code="open -a /Applications/Visual\ Studio\ Code.app"
 #   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 # fi
 # gpgconf --launch gpg-agent
-
