@@ -1,8 +1,3 @@
-{{ $taps := list
-    "homebrew/cask"
-    "homebrew/cask-fonts"
--}}
-
 {{ $brews := list
     "awscli"
     "bat"
@@ -48,10 +43,6 @@
 
 #!/bin/bash
 set -eufo pipefail
-
-{{ range $taps }}
-brew tap {{ . }}
-{{ end  }}
 
 brew install {{ $brews | join " " }}
 
