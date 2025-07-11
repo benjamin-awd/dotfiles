@@ -124,7 +124,7 @@ alias gitconfig="code ~/.gitconfig"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias code="open -a /Applications/Visual\ Studio\ Code.app"
+# alias code="open -a /Applications/Visual\ Studio\ Code.app"
 
 # GPG
 # unset SSH_AGENT_PID
